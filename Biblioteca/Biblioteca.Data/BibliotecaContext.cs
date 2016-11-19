@@ -17,5 +17,6 @@ namespace Biblioteca.Data
         }
         public DbSet<Libro> Libros { get; set;}
         public DbSet<Editorial> Editoriales { get; set; }
+        public DbSet<Autor> Autores { get; set; }
     }
 }

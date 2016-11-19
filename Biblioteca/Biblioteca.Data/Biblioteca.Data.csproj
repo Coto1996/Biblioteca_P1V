@@ -58,13 +58,20 @@
     <Compile Include="Migrations\201610292057437_agregarEditorial.Designer.cs">
       <DependentUpon>201610292057437_agregarEditorial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611121716465_agregando-autores.cs" />
+    <Compile Include="Migrations\201611121716465_agregando-autores.Designer.cs">
+      <DependentUpon>201611121716465_agregando-autores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NewFolder1\Autor.cs" />
     <Compile Include="NewFolder1\Editorial.cs" />
     <Compile Include="NewFolder1\Libro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -74,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610292057437_agregarEditorial.resx">
       <DependentUpon>201610292057437_agregarEditorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611121716465_agregando-autores.resx">
+      <DependentUpon>201611121716465_agregando-autores.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
