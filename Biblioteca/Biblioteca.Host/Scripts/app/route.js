@@ -2,8 +2,13 @@
     function ($routeProvider) {
         $routeProvider
         .when('/', {
-            template: "<p>Hola Mundo con Angular.</p"
+            templateUrl: "/Scripts/app/Home/Home.template.html",
+            controller: "homeController"
         })
+            .when('/editoriales', {
+                templateUrl: "/Scripts/app/Editorial/Editorial.Templates.html",
+                controller: "editorialController"
+            })
        .otherwise({
            redirectTo: "/"
        })

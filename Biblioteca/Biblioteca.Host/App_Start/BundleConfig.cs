@@ -1,4 +1,5 @@
-﻿using System.Web.Optimization;
+﻿using System.Web;
+using System.Web.Optimization;
 
 namespace Biblioteca.Host
 {
@@ -26,8 +27,13 @@ namespace Biblioteca.Host
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-route.js",
+                "~/Scripts/angular-messages.js",
                 "~/Scripts/app/app.js",
-                "~/Scripts/app/route.js"
+                "~/Scripts/app/route.js",
+                "~/Scripts/app/Home/Home.Controller.js",
+                "~/Scripts/app/ngMenuBiblioteca/ngMenuBiblioteca.directive.js",
+                "~/Scripts/Editorial/Editorial.Controller.js",
+                "~/Scripts/Editorial/editoria.service.js"
                 ));
         }
     }
