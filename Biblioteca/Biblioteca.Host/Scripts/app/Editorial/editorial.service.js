@@ -19,10 +19,10 @@
                 return $http.delete(miConfiguracion.urlBackend + 'Api/Editorial/' + editorial.Id);
             }
             return {
-                obtenerLibros: obtenerEditoriales,
+                obtenerEditoriales: obtenerEditoriales,
                 agregarEditorial: agregarEditorial,
                 editarEditorial: editarEditorial,
-                eliminarLibro: eliminarEditorial
+                eliminarEditorial: eliminarEditorial
             }
         }
     ]

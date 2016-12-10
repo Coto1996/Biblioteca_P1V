@@ -1,13 +1,23 @@
 ﻿app.controller('libroController', [
     '$scope',
     'libroService',
+    'editorialService',
     function ($scope, libroService) {
         $scope.libros = [];
+        $scope.editoriales = [];
         $scope.libroActual = {
             Id: '0',
-            Nombre: ''
+            Nombre: '',
+            Ano: ''
         };
+        $scope.EditorialSeleccionada = undefined;
         $scope.accionActual = 'Agregar';
+        $scope.obtenerEditoriales = function () {
+            editorialService.obtenerEditoriales()
+            .then(function (response) {
+                $scope.editoriales = response.data;
+            });
+        }
         $scope.obtenerLibros = function () {
             libroService.obtenerLibros()
                 .then(function (response) {
@@ -18,9 +28,12 @@
             if ($scope.accionActual === 'Agregar') {
                 libroService.agregarLibro($scope.libroActual)
                     .then(function (response) {
-                        $scope.obtenerLibros();
-                        $scope.limpiar();
-                        alert('Libro Agregado!');
+                        libroService.agregarEditorial(response.data, $scope.EditorialSeleccionada)
+                        .then(function(){
+                            $scope.obtenerLibros();
+                            $scope.limpiar();
+                            alert('Libro Agregado!');
+                        })
                     });
             }
             else if ($scope.accionActual === 'Editar') {
@@ -51,6 +64,10 @@
         $scope.editar = function (libro) {
             $scope.accionActual = 'Editar';
             $scope.libroActual = JSON.parse(JSON.stringify(libro));
+            $scope.EditorialSeleccionada = undefined;
+            $scope.EditorialSeleccionada = $scope.editoriales.find(function (editorial) {
+                return editorial.Id === libro.editorial.Id;
+            })
         }
 
         $scope.eliminar = function (libro) {
@@ -58,6 +75,7 @@
             $scope.libroActual = JSON.parse(JSON.stringify(libro));;
         }
 
+        $scope.obtenerEditoriales();
         $scope.obtenerLibros();
     }
 ]);

@@ -3,9 +3,8 @@
         <label for="libroId">Id</label>
         <input 
                class="form-control" 
-               id="libroId" 
-               ng-model="libroActual.Id" 
-               ng-disabled="true"/>
+               id="libroAno" 
+               ng-model="libroActual.Ano" 
     </div>
     <div class="form-group">
         <label for="libroNombre">Nombre</label>
@@ -21,6 +20,14 @@
             <div ng-message="required">El nombre del libro es requerido.</div>
             <div ng-message="minlength">El nombre del libro debe tener mas de 3 caracteres.</div>
             <div ng-message="maxlength">El nombre del libro debe tener menos de 25 caracteres.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Editorial</label>
+            <select name="libroEditorial" 
+              class="form-control" ng-model="EditorialSeleccionada"
+                    ng-options="editorial.Nombre for editorial in editoriales">
+            </select>
         </div>
     </div>
     <div class="form-group">
@@ -43,14 +50,14 @@
     <tr>
         <th>Id</th>
         <th>Nombre</th>
-        <th>Ano</th>
+        <th>Editorial</th>
         <th></th>
         <th></th>
     </tr>
-    <tr ng-repeat="libro in libros">
         <td>{{libro.Id}}</td>
         <td>{{libro.Nombre}}</td>
         <td>{{libro.Ano}}</td>
+        <td>{{libro.Editorial.Nombre}}</td>
         <td>
             <button ng-click="editar(libro)" class="btn btn-link">Editar</button>
         </td>

@@ -2,38 +2,38 @@
     '$scope',
     'editorialService',
     function ($scope, editorialService) {
-        $scope.libros = [];
-        $scope.libroActual = {
+        $scope.Editoriales = [];
+        $scope.EditorialActual = {
             Id: '0',
             Nombre: ''
         };
         $scope.accionActual = 'Agregar';
-        $scope.obtenerLibros = function () {
-            editorialService.obtenerLibros()
+        $scope.obtenerEditoriales = function () {
+            editorialService.obtenerEditoriales()
                 .then(function (response) {
-                    $scope.libros = response.data;
+                    $scope.Editoriales = response.data;
                 });
         }
-        $scope.salvarLibro = function () {
+        $scope.salvarEditoriales = function () {
             if ($scope.accionActual === 'Agregar') {
-                editorialService.agregarEditorial($scope.libroActual)
+                editorialService.agregarEditorial($scope.EditorialActual)
                     .then(function (response) {
-                        $scope.obtenerLibros();
+                        $scope.obtenerEditoriales();
                         $scope.limpiar();
                         alert('Editorial Agregada!');
                     });
             }
             else if ($scope.accionActual === 'Editar') {
-                editorialService.editarEditorial($scope.libroActual)
+                editorialService.editarEditorial($scope.EditorialActual)
                     .then(function (response) {
-                        $scope.obtenerLibros();
+                        $scope.obtenerEditoriales();
                         $scope.limpiar();
                         alert('Editorial Editada!');
                     });
             } else if ($scope.accionActual === 'Eliminar') {
-                editorialService.eliminarLibro($scope.libroActual)
+                editorialService.eliminarEditorial($scope.EditorialActual)
                     .then(function (response) {
-                        $scope.obtenerLibros();
+                        $scope.obtenerEditoriales();
                         $scope.limpiar();
                         alert('Editorial Eliminada!');
                     });
@@ -42,21 +42,21 @@
         }
         $scope.limpiar = function () {
             $scope.accionActual = 'Agregar';
-            $scope.libroActual = {
+            $scope.EditorialActual = {
                 Id: '0',
                 Nombre: ''
             }
         }
         $scope.editar = function (editorial) {
             $scope.accionActual = 'Editar';
-            $scope.libroActual = JSON.parse(JSON.stringify(editorial));
+            $scope.EditorialActual = JSON.parse(JSON.stringify(editorial));
         }
 
         $scope.eliminar = function (editorial) {
             $scope.accionActual = 'Eliminar';
-            $scope.libroActual = JSON.parse(JSON.stringify(editorial));;
+            $scope.EditorialActual = JSON.parse(JSON.stringify(editorial));;
         }
 
-        $scope.obtenerLibros();
+        $scope.obtenerEditoriales();
     }
 ]);

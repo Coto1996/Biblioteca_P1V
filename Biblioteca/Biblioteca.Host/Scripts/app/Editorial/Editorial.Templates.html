@@ -1,11 +1,11 @@
 ﻿<form name="editorialForm">
     <div class="form-group">
         <label for="editorialId">Id</label>
-        <input class="form-control" id="editorialId" ng-model="editorialActual.Id" ng-disabled="true"/>
+        <input class="form-control" id="editorialId" ng-model="EditorialActual.Id" ng-disabled="true"/>
     </div>
     <div class="form-group">
         <label for="editorialNombre">Nombre</label>
-        <input class="form-control" id="editorialNombre" name="editorialNombre" ng-model="editorialActual.Nombre" required ng-minlenght="3" ng-maxlength="23" />
+        <input class="form-control" id="editorialNombre" name="editorialNombre" ng-model="EditorialActual.Nombre" required ng-minlenght="3" ng-maxlength="23" />
         <div ng-messages="editorialForm.editorialNombre.$error">
             <div ng-message="required">El nombre de la editorial es requerido </div>
             <div>ng-message"minlength">El nombre de la editorial debe de tener al menos 3 caracteres</div>
