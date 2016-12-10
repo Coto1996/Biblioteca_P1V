@@ -217,14 +217,13 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\Editorial\Editorial.Controller.js" />
-    <Content Include="Scripts\app\Editorial\editorial.service.js" />
-    <Content Include="Scripts\app\Editorial\Editorial.Templates.html" />
-    <Content Include="Scripts\app\Home\Home.Controller.js" />
-    <Content Include="Scripts\app\Home\Home.template.html" />
+    <Content Include="Scripts\app\editorial\editorial.controller.js" />
+    <Content Include="Scripts\app\editorial\editorial.service.js" />
+    <Content Include="Scripts\app\editorial\editorial.template.html" />
+    <Content Include="Scripts\app\home\home.controller.js" />
     <Content Include="Scripts\app\ngMenuBiblioteca\ngMenuBiblioteca.directive.js" />
     <Content Include="Scripts\app\ngMenuBiblioteca\ngMenuBiblioteca.template.html" />
-    <Content Include="Scripts\app\route.js" />
+    <Content Include="Scripts\app\routes.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -251,6 +250,7 @@
     </Content>
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\app\home\home.template.html" />
     <Content Include="Scripts\angular-messages.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

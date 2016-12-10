@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace Biblioteca.Host
 {
@@ -29,11 +28,11 @@ namespace Biblioteca.Host
                 "~/Scripts/angular-route.js",
                 "~/Scripts/angular-messages.js",
                 "~/Scripts/app/app.js",
-                "~/Scripts/app/route.js",
-                "~/Scripts/app/Home/Home.Controller.js",
+                "~/Scripts/app/routes.js",
+                "~/Scripts/app/home/home.controller.js",
                 "~/Scripts/app/ngMenuBiblioteca/ngMenuBiblioteca.directive.js",
-                "~/Scripts/Editorial/Editorial.Controller.js",
-                "~/Scripts/Editorial/editoria.service.js"
+                "~/Scripts/app/editorial/editorial.controller.js",
+                "~/Scripts/app/editorial/editorial.service.js"
                 ));
         }
     }

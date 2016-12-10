@@ -1,5 +1,6 @@
-﻿app.directive('menuBiblioteca' , function(){
-    return{
-        templateUrl: '/Scripts/app/ngMenuBiblioteca/ngMenuBiblioteca.template.html'
-    };
+﻿app.directive('menuBiblioteca',
+    function () {
+        return {
+            templateUrl: '/Scripts/app/ngMenuBiblioteca/ngMenuBiblioteca.template.html'
+        };
 })
